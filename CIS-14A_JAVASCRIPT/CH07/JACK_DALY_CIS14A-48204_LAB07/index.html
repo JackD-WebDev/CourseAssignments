@@ -1,0 +1,127 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Lab 7 - Lie Detector Test
+Updated 11/4/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family:  Helvetica, Arial,sans-serif;
+      background-color: #aad9e8;
+      margin: 60px;
+      text-align: center;
+    }
+    p {
+      width: 40%;
+      color: rgb(76, 76, 76);
+      margin: 1em auto;
+    }
+    h1 {
+      color: #000;
+      font-size: 2em;
+    }
+  </style>
+  <title>Lie Detector Test</title>
+</head>
+<body>
+<script>
+
+const lieDetectorTest = () => {
+  let lies = 0;
+
+  let stolenDiamond = { };
+  if(stolenDiamond) {
+    document.write('<p>You stole the diamond</p>');
+    lies++; 
+  } // stolenDiamond is undefined, which is falsy
+
+  let car = {
+    keysInPocket: null
+  };
+  if(car.keysInPocket) {
+    document.write('<p>Uh oh, guess you stole the car!</p>');
+    lies++;
+  } // car.keysInPocket is null, which is falsy
+  if(car.emptyGasTank) {
+    document.write('<p>You drove the car after you stole it!</p>');
+    lies++;
+  } // car.emptyGasTank is undefined, which is falsy
+
+  let foundYouAtTheCrimeScene = [ ];
+  if(foundYouAtTheCrimeScene) {
+    document.write('<p>A sure sign of guilt</p>');
+    lies++;
+  } // foundYouAtTheCrimeScene is an empty array, which is truthy
+  if(foundYouAtTheCrimeScene[0]) {
+    document.write('<p>Caught with a stolen item!</p>');
+    lies++;
+  } // foundYouAtTheCrimeScene[0] is undefined, which is falsy
+
+  let yourName = ' ';
+  if(yourName) {
+    document.write('<p>Guess you lied about your name</p>');
+    lies++;
+  } // yourName is a string with a space, which is truthy
+
+  return lies; 
+}
+
+const numberOfLies = lieDetectorTest();
+document.write(`<p>You told ${numberOfLies} lies!</p>`); 
+if(numberOfLies >= 3) {
+  document.write('<h1>Guilty as charged</h1>'); 
+}
+
+/** Original code **
+
+function lieDetectorTest() {
+ var lies = 0;
+ var stolenDiamond = { };
+ if (stolenDiamond) {
+ console.log("You stole the diamond");
+ lies++;
+ }
+ var car = {
+ keysInPocket: null
+ };
+ if (car.keysInPocket) {
+ console.log("Uh oh, guess you stole the car!");
+ lies++;
+ }
+ if (car.emptyGasTank) {
+ console.log("You drove the car after you stole it!");
+ lies++;
+ }
+ var foundYouAtTheCrimeScene = [ ];
+ if (foundYouAtTheCrimeScene) {
+ console.log("A sure sign of guilt");
+ lies++;
+ }
+ if (foundYouAtTheCrimeScene[0]) {
+ console.log("Caught with a stolen item!");
+ lies++;
+ }
+ var yourName = " ";
+ if (yourName) {
+ console.log("Guess you lied about your name");
+ lies++;
+ }
+ return lies;
+}
+var numberOfLies = lieDetectorTest();
+console.log("You told " + numberOfLies + " lies!");
+if (numberOfLies >= 3) {
+ console.log("Guilty as charged");
+}
+*/
+
+</script>
+</body>
+</html>

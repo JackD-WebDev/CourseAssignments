@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+:root {
+	--pale: rgba(221, 190, 114, 0.75);
+	--light: rgba(164, 104, 50, 0.5);
+	--mid: #623c1d;
+	--dark: rgba(64, 34, 9, 0.3);
+	--darker: #1F1107;
+}
+
+@font-face {
+	font-family: 'Smythe';
+	src: url(https://fonts.googleapis.com/css2?family=Smythe&display=swap);
+}
+
+@font-face {
+	font-family: 'Special Elite';
+	src: url(https://fonts.googleapis.com/css2?family=Special+Elite&display=swap);
+}
+
+/* A3P5 Stylesheet Sample */
+header, nav, section, footer, article {
+	/* leave this alone */
+	display: block;
+}
+
+body {
+	/* change background, color, and font  */
+	background: var(--darker);
+	color: var(--mid);
+	font-family: 'Special Elite', cursive, serif;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#pagewrap {
+	/* change background, adjust width as needed */
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background: var(--dark);
+	position: relative;
+}
+
+#pagewrap::before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(images/steampunk.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.2;
+	z-index: -1;
+}
+
+header {
+	/* change background, color, whatever else you want */
+	background: var(--light);
+	color: var(--darker);
+	margin: 0;
+	padding: 2em 2em;
+}
+
+#main {
+	/* change background, whatever else you want   */
+	width: 700px;
+	float: left;
+	background: var(--pale);
+	padding: 0em;
+}
+
+#main > * {
+	/* adjust as needed  */
+	margin-left: 2em;
+}
+
+h1 {
+	/* adjust as needed  */
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	/* change fonts to fit your theme  */
+	font-family: 'Smythe', cursive, serif;
+	margin-bottom: 0;
+}
+
+p {
+	/* adjust as needed  */
+	margin-top: 5px;
+}
+
+nav {
+	/* change background, adjust width, padding as needed  */
+	width: 200px;
+	float: left;
+	background: var(--darker);
+	padding-top: 4em;
+	background-image: url(images/clock_interior.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+nav ul {
+	list-style-type: none;
+	/* this turns off bullets on navigation list   */
+	line-height: 1.4;
+	/* adjust as needed for link spacing */
+	padding-left: 0;
+}
+
+nav li {
+	/* change background, adjust others as needed  */
+	margin-top: .5em;
+	font-size: 95%;
+	background: var(--pale);
+	text-align: center;
+}
+
+nav a {
+	text-decoration: none;
+	/* turns off underlining on links within nav bar  */
+	color: var(--darker);
+}
+
+article {
+	/* adjust as needed to separate one article from next */
+	margin: 1em;
+}
+
+#hotelfig {
+	/* add borders and margin to your hotel image here  */
+	float: right;
+}
+
+footer {
+	/* adjust as needed  */
+	padding: .5em;
+	text-align: center;
+	font-size: 90%;
+	clear: left;
+	color: var(--pale);
+}
+
+#hotelpic {
+	border: 3px double #1F1107;
+	margin-left: 1em;
+	box-shadow: 0 0 6px 1px rgba(31, 17, 7, .5);
+}
+
+figcaption {
+	/* adjust as needed  */
+	font-size: 85%;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 20px;
+	font-weight: 700;
+}
+
+#main ul li {
+	list-style-image: url(images/gears.png);
+}

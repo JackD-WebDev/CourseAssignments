@@ -1,0 +1,371 @@
+/* Common Styles for all pages of Timepiece Towers Web site */
+/* Note: Refer to grading sheet for details on each of these sections */
+/* CSS Final Project by Jack Daly */
+:root {
+   --pale: rgba(221, 190, 114, 0.75);
+   --light: rgba(164, 104, 50, 0.75);
+   --mid: #623c1d;
+   --dark: rgba(64, 34, 9, 0.75);
+   --darker: #1F1107;
+}
+
+@font-face {
+   font-family: 'Smythe';
+   src: url(Smythe-Regular.ttf);
+}
+
+@font-face {
+   font-family: 'Special Elite';
+   src: url(SpecialElite-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+   min-height: 100%;
+}
+
+/* First rule below should probably be left alone. */
+header, nav, section, footer, article {
+   /* leave this alone */
+   display: block;
+}
+
+/* 1. Page Styles: On the "body" you must at least set color, background, margin, padding, font family & size.    
+   ==============  Optionally, you can also set styles on the page wrapper div here if you like.  
+	               But note that you will lose points for any of the above properties that are not set for the body  */
+body {
+   color: var(--darker);
+   font-family: 'Special Elite', serif;
+   font-size: 1.75rem;
+   margin: 0;
+   padding: 0;
+   background: linear-gradient(to bottom right, var(--darker), var(--pale));
+}
+
+#pagewrap {
+   margin: 0;
+   padding: 3rem;
+   position: relative;
+   box-sizing: border-box;
+   background-image: url(steampunk.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+/* 2. Header (Banner) Styles: For the top header area (which includes the h1) and should be treated as a banner area. 
+   =========================  Possible properties to use here include "background", "height", "padding", "margin",     
+                              and "border".  Feel free to use others instead. Use at least 2 properties.           */
+header {
+   background: var(--dark);
+   height: 10rem;
+   padding: .5rem 2rem 2rem 2rem;
+   border: 1px solid var(--darker);
+   border-radius: 0.5rem;
+   box-shadow: 0 0.25rem 0.5rem var(--darker);
+   text-align: center;
+}
+
+/* 3. Heading Styles: For h1-h3 together, set font-family and color; for each separately set font-size using em or %.   
+   =================  Set other styles as needed. Goal is to make heading text stand out from other page text.   
+	                  Use text-shadowing on your headings. One of your heading fonts must be an embedded Web font.  */
+h1, h2, h3 {
+   font-family: 'Smythe', serif;
+   color: var(--darker);
+   text-shadow: 0 0.25rem 0.5rem var(--darker);
+   margin-bottom: 1rem;
+}
+
+h1 {
+   font-size: 4em;
+}
+
+h2, h3 {
+   font-size: 3em;
+}
+
+/* 4. Intro Paragraph Styles:  use at least 1 property to emphasize 1st paragraph (intro article) 
+   =========================   */
+#intro {
+   font-size: 1.5rem;
+   font-family: 'Special Elite', serif;
+   color: var(--darker);
+   margin-bottom: 1rem;
+}
+
+#hotelpic {
+   height: 30rem;
+   padding: 0;
+   margin: 0;
+   border: 1px solid var(--darker);
+   border-radius: 0.75rem;
+   box-shadow: 0 0.25rem 0.5rem var(--darker);
+}
+
+/* 5. Copyright Styles:  use at least 2 properties to de-emphasize the copyright paragraph (footer)  
+   ===================  */
+footer {
+   font-size: 1.4rem;
+   font-family: 'Special Elite', serif;
+   color: var(--darker);
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+}
+
+footer p:first-of-type {
+   font-weight: 700;
+   color: var(--light);
+}
+
+/* 6. General Link Styles: Style the links outside the nav bar area using at least color and text-decoration  
+   ======================  Write 4 separate rules to affect all 4 link states.  */
+a {
+   text-decoration: underline var(--dark);
+}
+
+a:hover {
+   text-decoration: none var(--mid);
+}
+
+a:active {
+   color: var(--dark);
+}
+
+a:focus {
+   color: var(--mid);
+   text-emphasis: white;
+}
+
+a:visited {
+   color: var(--darker);
+}
+
+a:link {
+   color: var(--dark);
+}
+
+/* 7. Navigation Bar Styles: Should affect only the nav bar links. Style nav, ul and its li's as needed.           
+   ========================  Style all 4 link states to make active buttons when hovering. Remove bullets from list display. 
+                             Use selectors like "#eventspage #eventslink" to style the link to its own page separately      */
+nav ul {
+   display: flex;
+   justify-content: flex-end;
+   flex-direction: row;
+   list-style: none;
+   margin-bottom: 3rem;
+}
+
+nav li a {
+   border: #1F1107 1px solid;
+   background: var(--dark);
+   color: var(--darker);
+   border-radius: 0.5rem;
+   padding: 1rem;
+   box-shadow: 0 1rem 3rem var(--darker);
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   margin-right: 1rem;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 2rem;
+}
+
+nav ul li a:hover {
+   background: var(--light);
+   box-shadow: 0 0.5rem 1rem var(--darker);
+}
+
+nav li a:active {
+   background: var(--mid);
+   box-shadow: 0 0.5rem 1rem var(--darker);
+}
+
+nav ul li a:focus {
+   background: var(--mid);
+   box-shadow: 0 0.5rem 1rem var(--darker);
+}
+
+nav li a:visited {
+   background: var(--dark);
+   box-shadow: 0 1rem 3rem var(--darker);
+}
+
+nav li a:link {
+   background: var(--dark);
+   box-shadow: 0 1rem 3rem var(--darker);
+}
+
+#homepage #homelink,
+#eventspage #eventslink,
+#servicespage #serviceslink,
+#contactpage #contactlink,
+#faqpage #faqlink,
+#reservationspage #reservationslink {
+   background: var(--light);
+}
+
+#homepage #homelink:hover,
+#eventspage #eventslink:hover,
+#servicespage #serviceslink:hover,
+#contactpage #contactlink:hover,
+#faqpage #faqlink:hover,
+#reservationspage #reservationslink:hover {
+   background: var(--mid);
+   box-shadow: 0 0.5rem 1rem var(--darker);
+}
+
+/* 8. General List Styles: For unordered lists outside of nav bar. Set 2 levels of bullet shapes & 2 levels of bullet images. 
+   ======================  Outer bullets should stand out more than inner bullets. Use Reservations & Contact pages to test. */
+#primary ul {
+   list-style: none;
+}
+
+#primary ul li {
+   background: url(clockgear.png) left top no-repeat;
+   padding-left: 3.5rem;
+   line-height: 2.5rem;
+   margin-bottom: 2rem;
+}
+
+#primary ul ul li {
+   background: url(gears.png) left top no-repeat;
+   padding-left: 3rem;
+   margin: 2rem 6rem;
+}
+
+/* 9. Testimonial Styles: At least 4 rules to style at least these 4 items: the surrounding testimonials article,    
+   =====================  the 3 testimonial divs, the quotes, and the speakers. Goals: Uniquely style testimonial section 
+	                       itself, emphasize quote, de-emphasize speaker name. Adjust vertical spacing between items.       */
+#testimonials {
+   background: var(--mid);
+   padding: 0;
+   margin: 0 0 2rem 0;
+   border: 1px solid var(--darker);
+   border-radius: 0.75rem;
+   box-shadow: 0 0.25rem 0.5rem var(--darker);
+}
+
+.quote {
+   font-weight: 700;
+   margin-bottom: 1rem;
+   font-size: 1.75rem;
+}
+
+.speaker {
+   font-weight: 200;
+   font-size: 1.5rem;
+   margin-bottom: 2rem;
+   color: var(--light);
+}
+
+/* 10. Logo Positioning Styles: Absolute Positioning of logo image using "positionme" id. Leave the existing blank div at 
+   ===========================  bottom of each page in the html & style it to go toward the top of pages where you like.  
+	                            Give it a height & width to match logo image, set image as background, position absolutely */
+#positionme {
+   position: absolute;
+   top: 3.6rem;
+   left: 4.5rem;
+   height: 8.5rem;
+   width: 8.5rem;
+   background: url(logo.png) center center no-repeat;
+   opacity: 0.75;
+   background-size: contain;
+}
+
+/* 11. Multi-Column Layout Styles: Use of float, position, margin, and/or padding styles to create a multi-column layout.  
+   ==============================  For help with these styles, see the online "Final Project Layout Guide" handout.     
+	                               For some partial credit here you can use just the layout styles from A3P5              */
+#pagewrap {
+   width: 100vw;
+   height: 100vh;
+   display: grid;
+   grid-template-rows: 9rem 1fr 5fr 3rem;
+   grid-template-areas: "header""nav""main""footer";
+   gap: 2em;
+}
+
+header {
+   grid-area: header;
+}
+
+nav {
+   grid-area: nav;
+}
+
+#main {
+   grid-area: main;
+   display: flex;
+   flex-flow: column wrap-reverse;
+   justify-content: space-between;
+}
+
+#intro {
+   align-self: flex-start;
+   font-size: 1.75rem;
+   flex-grow: 1;
+   width: 100%;
+}
+
+#primary {
+   flex-grow: 3;
+   display: flex;
+   padding: 3rem 0 3rem 3rem;
+}
+
+#testimonials {
+   padding: 1rem;
+   flex-grow: 2;
+}
+
+footer {
+   grid-area: footer;
+   height: 6rem;
+   text-align: center;
+}
+
+#hotelfig, #main p {
+   padding-right: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+   #pagewrap {
+      display: flex;
+      flex-direction: row;
+   }
+
+   nav {
+      min-height: auto;
+      flex-wrap: wrap;
+   }
+}
+
+/* Miscellaneous Styles: Styles that don't fit in any of the above categories but affect multiple pages can go here. 
+   ====================  Use only as needed. This section is optional and does not count for any points.                 */
+#primary p {
+   font-size: 2rem;
+   border: var(--darker) 1px solid;
+   padding: 1rem;
+   background-color: var(--light);
+   border-radius: 1rem;
+   box-shadow: 0 0.25rem 0.5rem var(--darker);
+}
+
+#primary p {
+   margin-right: 3rem;
+}
+
+#hotelfig figcaption {
+   margin-top: 1rem;
+   text-align: center;
+}

@@ -1,0 +1,56 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Lab 4a - The Phrase-O-Matic
+Updated 10/01/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #aad9e8;
+      margin: 60px;
+    }
+    p {
+      width: 30%;
+      color: rgb(76, 76, 76);
+    }
+    h1 {
+      color: #000;
+      font-size: 2em;
+      text-align: center;
+    }
+    p::first-letter {
+      text-transform:capitalize;
+    }
+    span {
+      font-weight: bold;
+      color: #202cb1;
+    }
+  </style>
+  <title>The Phrase-O-Matic</title>
+</head>
+<body>
+</body>
+<script>
+
+const arrayRandom = (arr) => '<span>' + arr[Math.floor(Math.random() * arr.length)] + '</span>';
+
+const noun = ['mountain', 'cat', 'fish', 'helicopter', 'teapot', 'juice', 'cake', 'banana', 'pumpkin', 'sushi'];
+const verb = ['jump', 'run', 'fly', 'swim', 'dance', 'scream', 'laugh', 'cry', 'sleep', 'eat'];
+const adverb = ['quickly', 'slowly', 'happily', 'sadly', 'angrily', 'quietly', 'loudly', 'carefully', 'carelessly', 'elegantly'];
+const adjective = ['round', 'tiny', 'tall', 'groovy', 'pickled', 'skinny', 'spiky', 'orange', 'beautiful', 'gnarly'];
+const pluralNoun = ['trees', 'pears', 'books', 'noodles', 'horses', 'cars', 'windows', 'pencils', 'yachts', 'shoes'];
+
+const howToStudy = `<p>${arrayRandom(noun)} teachers always give out ${arrayRandom(adjective)} assignments. But as everyone knows, if you want to pass all of your classes so you can go to a/an ${arrayRandom(noun)} and become president of a big international ${arrayRandom(noun)} and have millions of ${arrayRandom(pluralNoun)} in the bank, you must do your homework and study ${arrayRandom(adverb)}. If you just sit around and ${arrayRandom(verb)}, you won't get ahead in life. you must learn to pay attention to every ${arrayRandom(adjective)} thing your teacher says. Do not interrupt or whisper to other ${arrayRandom(pluralNoun)} during class. Be sure to have a nice, ${arrayRandom(adjective)} notebook in which you can write down anything the teacher says that seems ${arrayRandom(adjective)}. Then go home and memorize all of those ${arrayRandom(adjective)} notes. When your teacher gives a surprise quiz, you will know all of the ${arrayRandom(pluralNoun)}.</p>`;
+
+document.write(howToStudy);
+
+</script>
+</html>

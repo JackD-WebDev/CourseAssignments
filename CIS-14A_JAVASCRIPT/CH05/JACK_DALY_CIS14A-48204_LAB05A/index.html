@@ -1,0 +1,98 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Lab 5a - The Auto-O-Matic
+Updated 10/15/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family:  Helvetica, Arial,sans-serif;
+      background-color: #aad9e8;
+      margin: 60px;
+      text-align: center;
+    }
+    p {
+      width: 30%;
+      color: rgb(76, 76, 76);
+      margin: 0 auto;
+    }
+    h1 {
+      color: #000;
+      font-size: 2em;
+    }
+  </style>
+  <title>The Auto-O-Matic</title>
+</head>
+<body>
+</body>
+<script>
+
+Array.prototype.getRandom = function () {
+  return this[Math.floor((Math.random() * this.length))];
+}
+
+const commonFeatures = {
+  color: ['Black', 'Blue', 'Gray', 'Red', 'Silver', 'White'].getRandom(),
+  year: [2017, 2018, 2019, 2020, 2021, 2022].getRandom(),
+  transmission: ['automatic', 'manual'].getRandom(),
+  doors: [2, 4].getRandom(),
+  mileage: 0
+}
+
+const hyundai = () => {
+  return {
+    make: 'Hyundai',
+    model: ['Accent', 'Elantra', 'Sonata', 'Tucson', 'Veloster'].getRandom(),
+    ...commonFeatures
+  };
+}
+
+const toyota = () => {
+  return {
+    make: 'Toyota',
+    model: ['Camry', 'Corolla', 'Prius', 'RAV4', 'Yaris'].getRandom(),
+    ...commonFeatures
+  };
+}
+
+const honda = () => {
+  return {
+    make: 'Honda',
+    model: ['Accord', 'Civic', 'CR-V', 'Fit', 'Pilot'].getRandom(),
+    ...commonFeatures
+  };
+}
+
+const ford = () => {
+  return {
+    make: 'Ford',
+    model: ['Bronco', 'Escape', 'Expedition', 'Explorer', 'F-150'].getRandom(),
+    ...commonFeatures
+  };
+}
+
+const chevy = () => {
+  return {
+    make: 'Chevy',
+    model: ['Bolt', 'Camaro', 'Corvette', 'Malibu', 'Volt'].getRandom(),
+    ...commonFeatures
+  };
+}
+
+const makeCar = () =>  [hyundai(), toyota(), honda(), ford(), chevy()].getRandom();
+
+const displayCar = (car) => document.write(
+  `<h1>Your new car is a:</h1><p>${car.year} ${car.color} ${car.make} ${car.model} with ${car.doors} doors, a${car.transmission == 'automatic' ? 'n ' : ' '}${car.transmission} transmission, and ${car.mileage} miles on the odometer!</p>`
+);
+
+displayCar(makeCar());
+
+</script>
+</html>

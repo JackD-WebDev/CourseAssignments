@@ -1,0 +1,66 @@
+/* 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Lab 8 - Battleship 2.0
+Updated 11/25/22 
+*/
+body {
+  background-color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+#board {
+  position: relative;
+  width: 1024px;
+  height: 863px;
+  margin: auto;
+  background: url("board.jpg") no-repeat;
+  z-index: 1;
+}
+
+#message-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #53af13;
+  z-index: 2;
+  font-size: 3.2em;
+}
+
+table {
+  position: absolute;
+  left: 173px;
+  top: 98px;
+  border-spacing: 0px;
+}
+
+td {
+  width: 94px;
+  height: 94px;
+}
+
+form {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 15px;
+  background-color: #53af13;
+  font-size: 1.1em;
+}
+
+form input {
+  background-color: #98cf71;
+  border-color: #53af13;
+  font-size: 1em;
+}
+
+.hit {
+  background: url("ship.png") no-repeat center center;
+}
+
+.miss {
+  background: url("miss.png") no-repeat center center;
+}

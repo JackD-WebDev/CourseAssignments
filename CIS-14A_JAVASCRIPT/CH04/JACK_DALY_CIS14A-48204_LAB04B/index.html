@@ -1,0 +1,77 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Lab 4b - Bubbles-R-Us
+Updated 10/03/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				font-size: 62.5%;
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight: 500;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr;
+			}
+			p,
+			p {
+				font-size: 1.2em;
+				background-color: rgb(9, 187, 157);
+				padding: 0.25rem;
+				border: 1px solid black;
+				border-radius: 0.25rem;
+				text-align: center;
+				margin: 0.5rem;
+			}
+			.row {
+				grid-column: 1/-1;
+			}
+		</style>
+		<title>Bubbles-R-Us</title>
+	</head>
+	<body></body>
+	<script>
+		const scores = [
+			60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44, 51,
+			69, 64, 66, 55, 52, 61, 46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44
+		];
+
+		const printAndGetHighScore = (scores) => {
+			let highScore = 0;
+			let output;
+			for (let i = 0; i < scores.length; i++) {
+				output = `<p>Bubble solution #${i + 1} - score: ${scores[i]}</p>`;
+				document.write(output);
+				if (scores[i] > highScore) {
+					highScore = scores[i];
+				}
+			}
+			return highScore;
+		};
+
+		const getBestResults = (scores, highScore) => {
+			let bestSolutions = [];
+			for (let i = 0; i < scores.length; i++) {
+				if (scores[i] == highScore) {
+					bestSolutions.push(' ' + (i + 1));
+				}
+			}
+			return bestSolutions;
+		};
+
+		const highScore = printAndGetHighScore(scores);
+		const bestSolutions = getBestResults(scores, highScore);
+
+		document.write(`
+  <p class="row">Bubbles tests: ${scores.length}</p>
+  <p class="row">Highest bubble score: ${highScore}</p>
+  <p class="row">Solutions with the highest score: ${bestSolutions}</p>
+`);
+	</script>
+</html>

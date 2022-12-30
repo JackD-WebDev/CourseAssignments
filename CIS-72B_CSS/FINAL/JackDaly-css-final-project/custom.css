@@ -1,0 +1,227 @@
+/* Custom Styles For Whatever Hotel */
+/* Styles in this stylesheet target items that occur only on one specific page. */
+/* CSS Final Project by Jack Daly */
+/* First 3 table rules below should probably be left alone, but some values can be adjusted as needed. */
+table#calendar {
+	width: 98%;
+	/* change this table width as needed  */
+	margin-left: auto;
+	/* auto left and right margins centers the table since it has a width */
+	margin-right: auto;
+	border-collapse: collapse;
+	/* leave this alone unless you want the effect of cellspacing then change to "separate" */
+	border-spacing: 0px;
+	/* leave this alone unless you want the effect of cellspacing then change to what you want */
+}
+
+table#calendar td, table#calendar th {
+	width: 14%;
+	/*  there are 7 days a week, so 7 * 14% = 98%, so leave this alone or tweak only slightly        */
+	padding: 0;
+	/*  adjust as needed to get more spacing inside events table cells (the effect of "cellpadding") */
+}
+
+table#calendar td {
+	height: 5em;
+	/*  change this height for the calendar days as needed */
+	vertical-align: top;
+	/* keeps text vertically aligned to the top of the cell (default is center)     */
+}
+
+/* 1. Events Page Calendar Styles: Create 5 or more calendar table related rules. These should not affect other tables!    
+   ==============================  5 required areas to style: table heading, weekdays, date #'s, empty days, & events.      
+                                   You can style the table itself too. Consider using backgrounds on some of these areas. */
+#eventspage #calendar {
+	border: 3px solid var(--darker);
+	font-size: 2rem;
+}
+
+#eventspage #calendar td {
+	color: var(--darker);
+	border: 1px solid var(--darker);
+	padding: .2rem;
+	background-color: var(--light);
+}
+
+#eventspage #calendar th {
+	color: var(--pale);
+	border: 1px solid var(--darker);
+	padding: .5rem;
+	background-color: var(--dark);
+}
+
+#eventspage #calendar .date, #eventspage #calendar .weekday {
+	font-family: 'Smythe', serif;
+	font-weight: 700;
+}
+
+#eventspage #calendar .date {
+	color: var(--mid);
+	font-size: 2rem;
+}
+
+#eventspage #month-year {
+	font-size: 3rem;
+}
+
+#eventspage .event {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--darker);
+}
+
+#eventspage .noday {
+	background-image: url(clock_interior.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/* 2. FAQ Page Question & Answer Styles: Style questions differently from answers so questions are easier to find,    
+   ====================================  question and answer pairs are grouped closer together vertically,          
+                                         and as a result the whole section is more visually pleasing.               */
+#faqpage #primary {
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+#faqpage #primary .question {
+	font-weight: 700;
+	align-self: start;
+	margin-bottom: .5rem;
+}
+
+#faqpage .answer {
+	background-color: var(--darker);
+	color: var(--pale);
+	margin-bottom: 3rem;
+}
+
+/* 3. Services Page Image Styles: Use each figures' id to float left/right & give margin on the inner side to keep text away.       
+   =============================  Use images' class to give common border properties (use a border style other than "solid").   
+                                  Also set common text styling for the figcaptions, perhaps including center aligning.       */
+#servicespage img {
+	width: 25rem;
+	padding: 0;
+	margin: 0;
+	border: 3px double var(--darker);
+	border-radius: 0.75rem;
+	box-shadow: 0 0.25rem 0.5rem var(--darker);
+}
+
+#servicespage figcaption {
+	margin-top: .5rem;
+	margin-left: 6rem;
+	font-size: 1.75rem;
+	font-weight: bold;
+	color: var(--darker);
+}
+
+#servicespage #primary {
+	display: block;
+}
+
+#servicespage #primary {
+	display: grid;
+	grid-template-columns: 20% 30% 20% 30%;
+	grid-template-rows: 4rem 1fr 4rem 15rem;
+	grid-template-areas: "service-title service-body spa-title spa-body"
+		"service-img service-body spa-img spa-body"
+		"awards-title awards-title awards-title awards-title"
+		"service-awards service-awards spa-awards spa-awards";
+	padding: 3rem;
+	position: relative;
+	gap: 2rem;
+}
+
+#servicespage #intro {
+	grid-area: intro;
+	align-self: center;
+	font-size: 1.75rem;
+	font-weight: bold;
+	color: var(--darker);
+}
+
+#servicespage #primary h2:first-of-type {
+	grid-area: service-title;
+}
+
+#servicespage #primary h2:last-of-type {
+	grid-area: spa-title;
+}
+
+#servicespage h3 {
+	grid-area: awards-title;
+}
+
+#servicespage figure:first-of-type {
+	grid-area: service-img;
+	align-self: start;
+}
+
+#servicespage figure:last-of-type {
+	grid-area: spa-img;
+}
+
+#servicespage #main p:nth-of-type(1) {
+	grid-area: service-body;
+	font-size: 1.75rem;
+}
+
+#servicespage #main p:nth-of-type(3) {
+	grid-area: spa-body;
+	font-size: 1.75rem;
+}
+
+#servicespage #main p:nth-of-type(2) {
+	grid-area: service-awards;
+}
+
+#servicespage #main p:nth-of-type(4) {
+	grid-area: spa-awards;
+}
+
+#servicespage #testimonials {
+	grid-area: testimonials;
+	margin-top: 3rem;
+}
+
+/* Miscellaneous Styles: For any other styles for a single page that does not fit the above categories.  
+   ====================  Use only as needed. This section is optional and does not count for any points.    */
+#reservationspage #primary, #contactpage #primary {
+	display: flex;
+	justify-content: space-around;
+	height: 30rem;
+}
+
+#contactpage #primary {
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	flex-shrink: 5;
+}
+
+#contactpage #primary p {
+	max-width: 30rem;
+}
+
+#contactpage .headingtext {
+	max-height: 4rem;
+}
+
+#contactpage ul {
+	min-height: 30rem;
+	margin: 2rem;
+}
+
+#contactpage ul li {
+	margin: 5rem 0;
+}
+
+#reservationspage #testimonials, #contactpage #testimonials {
+	height: 27rem;
+}
+
+#contactpage #primary p {
+	font-size: 1.5rem;
+}

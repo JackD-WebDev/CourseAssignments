@@ -1,0 +1,101 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Lab 5b - Auto-O-Matic 2
+Updated 10/21/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-size: 62.5%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    p {
+      font-size: 1.2em;
+      background-color: rgb(9, 187, 157);
+      padding: .25rem;
+      border: 1px solid black;
+      border-radius: .25rem;
+      text-align: center;
+      margin: .5rem;
+    }
+  </style>
+  <title>Auto-O-Matic 2</title>
+</head>
+<body>
+</body>
+<script>
+
+const fiat = {
+  make: 'Fiat',
+  model: '500',
+  year: 1957,
+  color: 'Medium Blue',
+  passengers: 2,
+  convertible: false,
+  mileage: 88000,
+  started: false,
+  fuel: 0,
+  start: function() {
+    if(this.fuel > 0) {
+      this.started = true;
+      document.write('<p>Car started.</p>');
+    } else {
+      document.write('<p>The car is on empty, fill up before starting!</p>');
+    }
+  },
+  stop: function() {
+    this.started = false;
+    document.write('<p>Car stopped.</p>');
+  },
+  drive: function() {
+    if(this.started) {
+      if(this.fuel > 0) {
+        document.write(`<p>${this.make} ${this.model} goes zoom zoom!</p>`);
+        this.fuel = this.fuel - 1;
+      } else {
+        document.write('<p>Uh oh, out of fuel.</p>');
+        this.stop();
+      }
+    } else {
+      document.write('<p>You need to start the engine first.</p>');
+    }
+  },
+  addFuel: function(amount) {
+    this.fuel = this.fuel + amount;
+    document.write(`<p>Fuel added. Tank is now at ${this.fuel} gallons.</p>`);
+  }
+};
+
+const driveFiat = () => {
+  fiat.drive();
+  fiat.start();
+  fiat.addFuel(4);
+  fiat.start();
+  fiat.drive();
+  fiat.drive();
+  fiat.drive();
+  fiat.drive();
+  fiat.drive();
+  fiat.addFuel(3);
+  fiat.start();
+  fiat.drive();
+  fiat.drive();
+  fiat.drive();
+  fiat.stop();
+}
+
+driveFiat();
+
+
+</script>
+</html>

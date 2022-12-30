@@ -1,0 +1,51 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Cookies Lab
+Updated 12/15/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				background-color: #aad9e8;
+			}
+		</style>
+		<title>Read Cookies</title>
+	</head>
+	<body>
+		<form name="myform" action="">
+			<p>click the following button and see the result:</p>
+			<input type="button" value="Get Cookie" onclick="ReadCookie()" />
+		</form>
+
+		<script>
+
+// single line of code that will randomly give me a whole number (integer) from 0 - 100. 
+
+
+
+			function ReadCookie() {
+				let allcookies = document.cookie;
+				document.write('<p>All Cookies: ' + allcookies + '</p>');
+
+				// Get all the cookies pairs in an array
+				cookiearray = allcookies.split(';');
+
+				// Now take key value pair out of this array
+				for (var i = 0; i < cookiearray.length; i++) {
+					name = cookiearray[i].split('=')[0];
+					value = cookiearray[i].split('=')[1];
+					document.write(
+						'<p>Key is: ' + name + ' and Value is: ' + value + '</p>'
+					);
+				}
+			}
+		</script>
+	</body>
+</html>

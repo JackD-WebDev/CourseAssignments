@@ -1,0 +1,63 @@
+<!-- 
+CIS-14A-48204
+Jack Daly 🥷 
+CIS 14: Cookies Lab
+Updated 12/15/22 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				background-color: #aad9e8;
+			}
+		</style>
+		<title>Write Cookies</title>
+	</head>
+	<body>
+		<form name="myform" action="">
+			Enter name:
+			<input title="name1" type="text" name="name1" placeholder="First Name" />
+			<input title="name2" type="text" name="name2" placeholder="Middle Name" />
+			<input title="name3" type="text" name="name3" placeholder="Last Name" />
+			<input type="button" value="Set Cookie" onclick="WriteCookie();" />
+		</form>
+		<script>
+			const WriteCookie = () => {
+				let now = new Date();
+				now.setMonth(now.getMonth() + 4);
+				if (
+					document.myform.name1.value == '' ||
+					document.myform.name2.value == '' ||
+					document.myform.name3.value == ''
+				) {
+					alert('Enter some value!');
+					return;
+				}
+				firstName = escape(document.myform.name1.value) + ';';
+				middleName = escape(document.myform.name2.value) + ';';
+				lastName = escape(document.myform.name3.value) + ';';
+				document.cookie = 'name1=' + firstName;
+				document.cookie = 'name2=' + middleName;
+				document.cookie = 'name3=' + lastName;
+				document.cookie = 'expires=' + now.toUTCString() + ';';
+				document.write(
+					'Setting Cookies : ' +
+						'name1=' +
+						firstName +
+						'name2=' +
+						middleName +
+						'name3=' +
+						lastName +
+						'expires=' +
+						now.toUTCString() +
+						';'
+				);
+			};
+		</script>
+	</body>
+</html>
